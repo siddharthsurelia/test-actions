@@ -1,0 +1,73 @@
+            <!--<div style="{div_style}">
+                <label style="{label_style}" for="stack">Select the image you want to use </label>
+                <select name="stack">
+                    <option value="mltools.docker.repositories.sap.ondemand.com/ml-jupyterhub-icn">icn</option>
+                    <option value="mltools.docker.repositories.sap.ondemand.com/ml-jupyterhub-pytorch">pytorch</option>
+                    <option value="mltools.docker.repositories.sap.ondemand.com/ml-jupyterhub-chargrid">chargrid-tf-24</option>
+                    <option value="mltools.docker.repositories.sap.ondemand.com/ml-jupyterhub-s4-tf2">s4-ierpcoe</option>
+                    <option value="mltools.docker.repositories.sap.ondemand.com/ml-jupyterhub-dod">dod</option>
+                </select>
+            </div>
+            <div style="{div_style}">
+                <div style="{additional_info_style};color:blue">Be careful while using max values as container will be killed if system resources are maxed out</div>
+                </br>
+                <label style="{label_style}" for="cpu_limit">CPU Limit {optional_label}</label>
+                <input style="{input_style}" name="cpu_limit" placeholder="e.g. 8"></input>
+                <div style="{additional_info_style}">Max={additional_cpu_info} Default=4</div>
+            </div>
+            <div style="{div_style}">
+                <label style="{label_style}" for="mem_limit" title="Memory Limit in GB">Memory Limit in GB {optional_label}</label>
+                <input style="{input_style}" name="mem_limit" id="mem-limit" title="Memory Limit in GB" placeholder="e.g. 1, 2, 15, ..."></input>
+                <div style="{additional_info_style}">Max={additional_memory_info} Default=10</div>
+            </div>
+            <div style="{div_style}">
+                <label style="{label_style}" for="gpus" title="{description_gpus}">GPUs {optional_label}</label>
+                <input style="{input_style}" name="gpus" title="{description_gpus}" placeholder="e.g. all, 0, 1, 2, ..."></input>
+                <div style="{additional_info_style}">Max=all Default=all</div>
+                <div style="background-color: #ffa000; padding: 8px; margin-top: 4px; display: none; {input_style}" id="gpu-info-box">When using GPUs, make sure to use a GPU-supporting Docker image!</div>
+            </div>
+            <div style="{div_style}">
+                <label style="{label_style}" for="env" title="{description_env}">Environment Variables {optional_label}</label>
+                <textarea style="{input_style}" name="env" title="{description_env}" placeholder="NAME=VALUE"></textarea>
+                <div style="{additional_info_style}">{description_env}</div>
+	    </div>-->
+
+<link rel="stylesheet" href="styles.css">
+<div style="{div_style}">
+    <label style="{label_style} width:50%;" for="stack">Select image from dropdown</label>
+    </br>
+    <select name="stack">
+        {option_tag}
+    </select>
+</div>
+<div style="{div_style}">
+    <div style="{additional_info_style};color:blue">Be careful while using max values as container will be killed if
+        system resources are maxed out</div>
+    </br>
+    <label style="{label_style}" for="cpu_limit">CPU Limit {optional_label}</label>
+    <input style="{input_style}" name="cpu_limit" placeholder="e.g. 8"></input>
+    <div style="{additional_info_style}">Max={additional_cpu_info} Default=4</div>
+</div>
+<div style="{div_style}">
+    <label style="{label_style}" for="mem_limit" title="Memory Limit in GB">Memory Limit in GB {optional_label}</label>
+    <input style="{input_style}" name="mem_limit" id="mem-limit" title="Memory Limit in GB"
+        placeholder="e.g. 1, 2, 15, ..."></input>
+    <div style="{additional_info_style}">Max={additional_memory_info} Default=10</div>
+</div>
+<div style="{div_style}">
+    <label style="{label_style} width:75%;" for="shm_size" title="Shared Memory Size">Shared memory size {optional_label} <span style="{additional_info_style} color:red">ignore if image is not pytorch</span></label>
+    <input style="{input_style}" name="shm_size" id="shm-size" title="Shared memory size in MB"
+        placeholder="e.g. 100m"></input>
+</div>
+<div style="{div_style}">
+    <label style="{label_style}" for="gpus" title="{description_gpus}">GPUs {optional_label}</label>
+    <input style="{input_style}" name="gpus" title="{description_gpus}" placeholder="e.g. all, 0, 1, 2, ..."></input>
+    <div style="{additional_info_style}">Max=all Default=all</div>
+    <div style="background-color: #ffa000; padding: 8px; margin-top: 4px; display: none; {input_style}"
+        id="gpu-info-box">When using GPUs, make sure to use a GPU-supporting Docker image!</div>
+</div>
+<div style="{div_style}">
+    <label style="{label_style}" for="env" title="{description_env}">Environment Variables {optional_label}</label>
+    <textarea style="{input_style}" name="env" title="{description_env}" placeholder="NAME=VALUE"></textarea>
+    <div style="{additional_info_style}">{description_env}</div>
+</div>
